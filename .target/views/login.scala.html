@@ -1,0 +1,16 @@
+@(userForm: Form[User])
+@import helper._
+@main("Pharmacy | Login") {
+
+	<h1>Hello, Lekaren</h1>
+	<h2>Login</h2>
+	@form(routes.Application.authenticate()) {
+        @inputText(userForm("email")) 
+        @inputPassword(userForm("password"))
+        <input type="submit" value="Log in">
+    }
+    
+    <p>or <a href="@routes.Application.register()">register</a></p>
+    
+    
+}

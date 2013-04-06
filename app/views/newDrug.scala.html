@@ -1,0 +1,13 @@
+@(taskForm: Form[Drug])
+@import helper._
+@main("Add new drug") {
+
+	<h2>Add drug</h2>
+	@form(routes.Application.create()) {
+        @inputText(taskForm("name")) 
+        <input type="submit" value="Create">
+        
+    }
+    
+    
+}

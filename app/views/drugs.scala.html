@@ -1,0 +1,20 @@
+@(user: User)
+
+@main("Pharmacy | Home") {
+	
+	<h1>Workspace</h1>
+	<p>Hello @user.name</p>
+    
+	<h1>Drugs</h1>
+	<h2>@user.drugs.size() drugs</h2>
+    
+	<ol>
+		@for(drug <- user.drugs) {
+			<li>@drug.name</li>		
+		}
+	</ol>
+	
+	<a href="@routes.Application.newDrug()">Add new drug</a>
+    <a href="@routes.Application.logout()">Logout</a>
+    
+}
